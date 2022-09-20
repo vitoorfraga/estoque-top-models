@@ -10,8 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Produtos {
-  id    String @id @default(uuid())
-  title String
-  qtd   Int
+model Produto {
+  produtoId   Int    @id @default(autoincrement())
+  nome        String
+  qtd         Int
+  categoriaId Int
+
+  categoria Categoria @relation(fields: [categoriaId], references: [categoriaId])
+}
+
+model Categoria {
+  categoriaId Int       @id @default(autoincrement())
+  nome        String
+  produtos    Produto[]
 }
