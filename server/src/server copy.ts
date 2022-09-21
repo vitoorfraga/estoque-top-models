@@ -1,6 +1,5 @@
 import express, { query, request, response } from "express";
 import { PrismaClient } from '@prisma/client'
-import cors from 'cors'
 
 const app = express()
 app.use(express.json())
@@ -10,8 +9,6 @@ const prisma = new PrismaClient({
     log: ['query']
 })
 
-app.use(express.json())
-app.use(cors())
 
 // Rota consultar estoque
 app.get('/estoque', async (request, response) => {
