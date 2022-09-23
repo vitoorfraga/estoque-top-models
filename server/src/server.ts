@@ -7,7 +7,6 @@ app.use(express.json())
 
 // Conexão com o banco
 const prisma = new PrismaClient({
-    log: ['query']
 })
 
 app.use(express.json())
@@ -31,7 +30,7 @@ app.get('/categorias', async (request, response) => {
 
 // Rota cadastrar produto
 app.post('/produto', async (request, response) => {
-    const body = request.body
+    const body: any = request.body
 
     const produto = await prisma.produto.create({
         data: {
@@ -40,7 +39,7 @@ app.post('/produto', async (request, response) => {
             categoriaId: body.categoriaId,
 
             // Verificar esse campo
-            categoria: body.categoria
+            // categoria: body.categoria
         }
     })
 

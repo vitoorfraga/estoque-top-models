@@ -1,23 +1,49 @@
 import axios from 'axios';
 import { FormEvent, useEffect, useState } from 'react'
+import { getConstantValue } from 'typescript';
 import './styles.css'
 
 
 
 interface Categoria {
-    id: number;
+    categoriaId: string;
     nome: string;
   }
 
-function handleCreateProduct(event: FormEvent){
-    event.preventDefault()
-    console.log('Submite')
-}
 
-export function NewProduct(){
+  export function NewProduct(){
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
+    async function handleCreateProduct(event: FormEvent){
+        event.preventDefault()
+        console.log('clicou no botão')
+    
+        const formData = new FormData(event.target as HTMLFormElement)
+        const data = Object.fromEntries(formData)
+    
+    
+        console.log(data)
+    
+    
+        // Enviar arquivo para o BD
+        try {
+            await axios.post('http://localhost:3333/produto', {
+                nome: data.productName,
+                qtd: Number(data.amount),
+                categoriaId: Number(data.category),
+            })
+
+            console.log('jasndjasndjas')
+            alert('Anúncio criado com sucesso!')
+            console.log(
+                data.productName,  data.amount, data.category
+            )
+        } catch (err) {
+            alert('Erro ao criar o anúncio')
+        }
+    
+    }
 
     useEffect(() => {
         axios.get('http://localhost:3333/categorias').then((response) => {
@@ -38,13 +64,14 @@ export function NewProduct(){
                     <select
                       id="category" 
                      name="category"
+                     defaultValue=''
                       placeholder='Selecione a categoria'
                       >
 
-                        <option  disabled selected defaultValue={''}>Selecione a categoria</option>
+                        <option disabled value=''>Selecione a categoria</option>
 
                         {categorias.map( categoria =>{
-                            return <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
+                            return <option key={categoria.categoriaId} value={categoria.categoriaId}>{categoria.nome}</option>
                         })}
 
                     </select>
@@ -52,7 +79,7 @@ export function NewProduct(){
 
                     <div className='formField'>
                         <label htmlFor="amount">Quantidade:</label>
-                        <input type="number" placeholder='Ex: 5'/>
+                        <input name='amount' type="number" placeholder='Ex: 5'/>
                     </div>
 
 
