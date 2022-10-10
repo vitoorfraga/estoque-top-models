@@ -35,12 +35,12 @@ interface Categoria {
             })
 
             console.log('jasndjasndjas')
-            alert('Anúncio criado com sucesso!')
+            alert('Produto cadastrado no banco de dados.')
             console.log(
                 data.productName,  data.amount, data.category
             )
         } catch (err) {
-            alert('Erro ao criar o anúncio')
+            alert('Erro ao cadastrar produto')
         }
     
     }

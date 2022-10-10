@@ -6,8 +6,8 @@
 }
 
 body{
-    background-color: #fff;
-    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
 }
 
@@ -16,5 +16,7 @@ body{
 
     --white: #fff;
     --black: #000;
-    --gray: #252525;
+    --gray: #4B4B4B;
+    --background-color: #F1F3F4;
+    --primary-color: #EB9CFF;
 }
