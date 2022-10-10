@@ -5,8 +5,8 @@ import Home from './Pages/Home'
 function App() {
   return (
     <div>
-      {/* <Home></Home> */}
-      <NewProduct></NewProduct>
+      <Home></Home>
+      {/* <NewProduct></NewProduct> */}
     </div>
   )
 }

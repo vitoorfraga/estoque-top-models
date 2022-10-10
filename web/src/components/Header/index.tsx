@@ -5,16 +5,27 @@ export function Header(){
     return(
         <div className='headerBackground'>
             <div className='headerContainer'>
-                <div>
+                <div className='menuLeft'>
                     <Button
                     name={'Estoque'}
                     link={'#'}
                     >    
                     </Button>
+
                 </div>
 
-                <div>
+                <div className='menuRight'>
+                <Button
+                    name={'Novo produto'}
+                    link={'#'}
+                    >    
+                    </Button>
 
+                    <Button
+                    name={'Editar produto'}
+                    link={'#'}
+                    >    
+                    </Button>
                 </div>
             </div>
         </div>
