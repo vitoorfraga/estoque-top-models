@@ -1,20 +1,22 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { NewProduct } from "../../components/NewProduct/NewProduct";
-import { Header } from "../../components/Header";
+import { Sidebar } from "../../components/Sidebar";
 import "./styles.css";
 
 function NovoProduto() {
   return (
-    <>
-      <Header />
-      <div className="novo-produto-container">
-        <h1>Cadastrar produto</h1>
-        <p>Para cadastrar um novo produto, preencha todos os campos :).</p>
-      </div>
+    <div className="main-grid">
+      <Sidebar />
+      <div className="main-content new-product-container">
+        <div className="new-product-title">
+          <h1>Cadastrar produto</h1>
+          <p>Para cadastrar um novo produto, preencha todos os campos :).</p>
+        </div>
 
-      <NewProduct></NewProduct>
-    </>
+        <NewProduct></NewProduct>
+      </div>
+    </div>
   );
 }
 

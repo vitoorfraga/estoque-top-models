@@ -6,3 +6,11 @@
 .novo-produto-container p {
   margin-top: 1rem;
 }
+
+.new-product-title {
+  background-color: white;
+  max-width: 450px;
+  padding: 4rem;
+  margin: 4rem;
+  border-radius: 0.4rem;
+}
