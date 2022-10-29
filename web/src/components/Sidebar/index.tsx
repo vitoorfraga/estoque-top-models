@@ -38,7 +38,7 @@ export function Sidebar() {
         <div className="sidebar-nav">
           <div className="button">
             <img src={archiveIcon} alt="" />
-            <Link to="/">Estoque</Link>
+            <Link to="/estoque">Estoque</Link>
           </div>
 
           <div className="button">

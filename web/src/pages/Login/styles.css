@@ -1,0 +1,106 @@
+.login-grid {
+  display: grid;
+
+  grid-template-rows: 100vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-grid .background {
+  background-color: red;
+}
+
+.login-grid .background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.login .login-intro {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.login-form {
+  margin-left: 0;
+  margin-top: 4rem;
+
+  display: grid;
+  gap: 3rem;
+}
+
+.login-form .form-field {
+  position: relative;
+}
+
+.login-form .form-field label {
+  color: var(--gray);
+  font-size: 1.2rem;
+
+  position: absolute;
+  transform: translate(0, 26px) scale(1);
+
+  margin-top: -2rem;
+}
+
+.login-form .form-field input {
+  padding: 0;
+  background-color: var(--background-color);
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--black);
+
+  /* margin-top: 4rem; */
+  margin-bottom: 0;
+  width: 100%;
+
+  transition: all 0.3s ease-out;
+}
+
+.login-form .form-field input:focus {
+  outline: none;
+  border-bottom: 2px solid #3951b2;
+}
+
+.login-form .form-field input {
+  height: 3rem;
+}
+
+.login-form .form-field label {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform-origin: top left;
+  transition: all 0.2s ease-out;
+}
+
+.login-form .form-field .Active {
+  transform: translate(0, 12px) scale(0.75);
+  /* margin-top: 2rem; */
+}
+
+.login-form .form-field input:placeholder {
+  color: transparent;
+}
+
+.login-form .form-button {
+  width: 100% !important;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.login-form .form-button button {
+  width: 100% !important;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+}

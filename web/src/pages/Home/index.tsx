@@ -11,38 +11,11 @@ interface Produto {
 }
 
 function Home() {
-  const [produtos, setProdutos] = useState<Produto[]>([]);
-
-  useEffect(() => {
-    axios("http://localhost:3333/estoque").then((response) => {
-      setProdutos(response.data); //pega as informações dos jogos no back-end (API)
-    });
-  }, []);
-
   return (
     <div className="main-grid">
       <Sidebar />
       <div className="main-content">
-        <div className="productListHeader">
-          <span>Nome</span>
-          <span>Código</span>
-          <span>Quantidade</span>
-          <span className="productListHeaderCategory">Categoria</span>
-        </div>
-
-        <div className="productListBody">
-          {produtos.map((produto) => {
-            return (
-              <Product
-                nome={produto.nome}
-                key={produto.produtoId}
-                produtoId={produto.produtoId}
-                categoria={produto.categoriaId}
-                qtd={produto.qtd}
-              />
-            );
-          })}
-        </div>
+        <h1>HOME</h1>
       </div>
     </div>
   );
