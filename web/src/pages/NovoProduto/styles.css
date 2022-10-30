@@ -1,4 +1,6 @@
 .novo-produto-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
   margin: 2rem 0;
 }
