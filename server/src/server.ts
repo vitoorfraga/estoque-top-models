@@ -47,12 +47,11 @@ const idsToDelete = [5, 29, 255];
 
 // Rota para Deletar Produto
 app.delete("/produto/:id", async (request, response) => {
-  const id: any = request.params.id;
-  const idNumber: number = Number(id);
+  const id: number = Number(request.params.id);
 
   const deleteProduct = await prisma.produto.delete({
     where: {
-      productId: idNumber,
+      produtoId: id,
     },
   });
   return response.json("Deletou");
