@@ -38,9 +38,9 @@ const Login = () => {
     const login: any = document.querySelector("#login-mail");
     const password: any = document.querySelector("#login-password");
 
-    if (login.value === "vitoorfraga0@gmail.com") {
+    if (login.value === "dev@btk.com.br") {
       if (password.value === "1234") {
-        console.log("Logou Pae :)");
+        window.location.href = "/";
       }
     } else {
       Swal.fire({
@@ -94,7 +94,7 @@ const Login = () => {
           </div>
 
           <div className="form-button">
-            <button type="submit">Cadastrar Produto</button>
+            <button type="submit">Entrar</button>
           </div>
         </form>
       </div>

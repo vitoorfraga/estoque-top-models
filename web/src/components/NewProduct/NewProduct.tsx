@@ -25,6 +25,7 @@ export function NewProduct() {
       await axios.post("http://localhost:3333/produto", {
         nome: data.productName,
         qtd: Number(data.amount),
+        tamanho: data.size,
         categoriaId: Number(data.category),
       });
 
@@ -87,6 +88,27 @@ export function NewProduct() {
         <div className="form-field">
           <label htmlFor="amount">Quantidade:</label>
           <input required name="amount" type="number" placeholder="Ex: 5" />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="size">Tamanho:</label>
+          <select
+            required
+            id="size"
+            name="size"
+            defaultValue=""
+            placeholder="Selecione o tamanho"
+          >
+            <option disabled value="">
+              Selecione o tamanho
+            </option>
+
+            <option value="PP">PP</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="G">GG</option>
+          </select>
         </div>
 
         <div className="form-button">

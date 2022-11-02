@@ -8,6 +8,7 @@ interface Produto {
   nome: string;
   qtd: string;
   categoriaId: string;
+  tamanho: string;
 }
 
 function Estoque() {
@@ -26,6 +27,7 @@ function Estoque() {
         <div className="productListHeader">
           <span>Nome</span>
           <span>Código</span>
+          <span>Tamanho</span>
           <span>Quantidade</span>
           <span className="productListHeaderCategory">Categoria</span>
         </div>
@@ -37,6 +39,7 @@ function Estoque() {
                 nome={produto.nome}
                 key={produto.produtoId}
                 produtoId={produto.produtoId}
+                tamanho={produto.tamanho}
                 categoria={produto.categoriaId}
                 qtd={produto.qtd}
               />

@@ -10,15 +10,15 @@ interface Produto {
   categoriaId: string;
 }
 
-function Home() {
+function EditProduct() {
   return (
     <div className="main-grid">
       <Sidebar />
       <div className="main-content">
-        <h1 style={{ margin: "2rem" }}>Bem vindo!</h1>
+        <h1 style={{ margin: "2rem" }}>Editar produtos!</h1>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default EditProduct;

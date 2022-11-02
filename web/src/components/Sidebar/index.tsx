@@ -48,7 +48,7 @@ export function Sidebar() {
 
           <div className="button">
             <img src={editIcon} alt="" />
-            <Link to="/">Editar Produto</Link>
+            <Link to="/editar-produto">Editar Produto</Link>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export function Sidebar() {
         <div className="sidebar-nav">
           <div className="button">
             <img src={helpCircleIcon} alt="" />
-            <Link to="/">Contato</Link>
+            <Link to="/contato">Contato</Link>
           </div>
         </div>
       </div>
