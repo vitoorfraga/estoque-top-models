@@ -9,6 +9,7 @@ import archiveIcon from "./../../assets/icons/archive.svg";
 import editIcon from "./../../assets/icons/edit.svg";
 import plusCircleIcon from "./../../assets/icons/plus-circle.svg";
 import homeIcon from "./../../assets/icons/home.svg";
+import estoqueIcon from "./../../assets/icons/folder.svg";
 import helpCircleIcon from "./../../assets/icons/help-circle.svg";
 
 import "./styles.css";
@@ -22,47 +23,33 @@ export function Sidebar() {
       </div>
 
       <div className="sidebar-nav-item">
-        <span>DASHEBOARD</span>
-
-        <div className="sidebar-nav">
-          <div className="button">
-            <img src={homeIcon} alt="" />
-            <Link to="/">Inicio</Link>
-          </div>
-        </div>
+        <Link to="/" className="button">
+          <img src={homeIcon} alt="" />
+          Inicio
+        </Link>
+        <Link to="/estoque" className="button">
+          <img src={estoqueIcon} alt="" />
+          Estoque
+        </Link>
+        <Link to="/novo-produto" className="button">
+          <img src={plusCircleIcon} alt="" />
+          Novo Produto
+        </Link>
+        <Link to="/editar-produto" className="button">
+          <img src={editIcon} alt="" />
+          Editar Produto
+        </Link>
+        <Link to="/contato" className="button">
+          <img src={helpCircleIcon} alt="" />
+          Contato
+        </Link>
       </div>
 
-      <div className="sidebar-nav-item">
+      {/* <div className="sidebar-nav-item">
         <span>APP</span>
 
-        <div className="sidebar-nav">
-          <div className="button">
-            <img src={archiveIcon} alt="" />
-            <Link to="/estoque">Estoque</Link>
-          </div>
-
-          <div className="button">
-            <img src={plusCircleIcon} alt="" />
-            <Link to="/novo-produto">Novo Produto</Link>
-          </div>
-
-          <div className="button">
-            <img src={editIcon} alt="" />
-            <Link to="/editar-produto">Editar Produto</Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="sidebar-nav-item">
-        <span>SUPORTE</span>
-
-        <div className="sidebar-nav">
-          <div className="button">
-            <img src={helpCircleIcon} alt="" />
-            <Link to="/contato">Contato</Link>
-          </div>
-        </div>
-      </div>
+        <div className="sidebar-nav"></div>
+      </div> */}
     </div>
   );
 }

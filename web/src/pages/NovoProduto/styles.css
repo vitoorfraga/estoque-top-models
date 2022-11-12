@@ -11,8 +11,12 @@
 
 .new-product-title {
   background-color: white;
-  max-width: 450px;
+  max-width: 500px;
   padding: 4rem;
-  margin: 4rem;
-  border-radius: 0.4rem;
+  margin-left: 4rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+
+  margin: 2rem auto 0 auto;
+
+  border-bottom: 0.1rem solid var(--background-color);
 }

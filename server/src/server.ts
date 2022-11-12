@@ -18,13 +18,6 @@ app.get("/estoque", async (request, response) => {
   return response.json(estoque);
 });
 
-// Rota Categorias
-app.get("/categorias", async (request, response) => {
-  const categorias = await prisma.categoria.findMany();
-
-  return response.json(categorias);
-});
-
 // Rota cadastrar produto
 app.post("/produto", async (request, response) => {
   const body: any = request.body;
@@ -34,10 +27,7 @@ app.post("/produto", async (request, response) => {
       nome: body.nome,
       qtd: body.qtd,
       tamanho: body.tamanho,
-      categoriaId: body.categoriaId,
-
-      // Verificar esse campo
-      // categoria: body.categoria
+      categoriaName: body.categoriaName,
     },
   });
 
@@ -49,8 +39,6 @@ const idsToDelete = [5, 29, 255];
 // Rota para Deletar Produto
 app.delete("/produto/:id", async (request, response) => {
   const id: number = Number(request.params.id);
-  //   const idNumber = parseInt(id).toFixed;
-  //   console.log(idNumber);
 
   const deleteProduct = await prisma.produto.delete({
     where: {

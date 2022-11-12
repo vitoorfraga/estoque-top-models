@@ -1,0 +1,36 @@
+.modal-container {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.167);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  width: 70rem;
+  height: 50rem;
+  border-radius: 0.4rem;
+
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.close-modal img {
+  width: 18px;
+  height: 18px;
+}

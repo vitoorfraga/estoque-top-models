@@ -16,5 +16,13 @@ model Produto {
   qtd         Int
   tamanho     String
   categoriaName String
+  categoriaId Int
+
+  categoria Categoria @relation(fields: [categoriaId], references: [categoriaId])
 }
 
+model Categoria {
+  categoriaId Int       @id @default(autoincrement())
+  nome        String
+  produtos    Produto[]
+}

@@ -14,18 +14,21 @@
   color: var(--gray);
 }
 
-form {
-  max-width: 50rem;
-  margin-left: 4rem;
-  display: grid;
-  gap: 2rem;
+.new-product-container {
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  background-color: #fff;
+
+  border-radius: 0 0 0.4rem 0.4rem;
+
+  padding: 4rem;
 }
 
-.form-row {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-}
 .form-field {
   display: flex;
   flex-direction: column;
@@ -38,13 +41,21 @@ form {
 }
 
 .form-field input,
-select {
-  padding: 0.4rem 2rem;
-  border: 2px solid var(--black);
-  border-radius: 0.4rem;
-  text-align: center;
+.form-field select {
+  border: none;
+}
+
+.form-field input,
+.form-field select {
+  padding: 0.4rem 1rem;
+  border-bottom: 2px solid var(--black);
+  text-align: left;
   width: 25rem;
   height: 4rem;
+}
+
+.form-field input:focus {
+  outline: none;
 }
 
 .form-field input::placeholder {
@@ -68,6 +79,7 @@ select {
 
   font-size: 1.4rem;
   color: var(--white);
+  margin: 0 auto;
 }
 
 /* Reset do input number */

@@ -8,7 +8,7 @@ interface Produto {
   produtoId: string;
   nome: string;
   qtd: string;
-  categoriaId: string;
+  categoriaName: string;
   tamanho: string;
 }
 
@@ -45,7 +45,7 @@ function EditProduct() {
                 key={produto.produtoId}
                 produtoId={produto.produtoId}
                 tamanho={produto.tamanho}
-                categoria={produto.categoriaId}
+                categoria={produto.categoriaName}
                 qtd={produto.qtd}
                 inDelete={true}
                 funcionalidade={
