@@ -51,7 +51,6 @@
 }
 
 .sidebar-nav {
-  background-color: var(--background-color);
   text-align: center;
   max-width: 90%;
   margin: 0 auto 0 auto;
@@ -70,11 +69,11 @@
   justify-content: start;
   gap: 1rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   padding: 1rem 0;
 
-  /* box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%); */
-  border-bottom: 1px solid #e9e9e9;
+  background-color: var(--white);
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
@@ -86,10 +85,15 @@
 }
 
 .button img {
-  width: 20px;
+  width: 18px;
   margin: 0 1.5rem 0 2rem;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
   background-color: #e4e4e4a9;
+}
+
+.button:hover img {
+  transform: scale(1.2);
 }
