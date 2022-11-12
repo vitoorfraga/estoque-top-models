@@ -1,51 +1,76 @@
-.productListHeader{
-    background-color: var(--white);
-    padding: 20px;
-    max-width: 909px;
-    color: #868686;
+.productListHeader {
+  background-color: var(--white);
+  /* padding: 20px; */
+  max-width: 909px;
+  color: #868686;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
 
-    margin: 30px auto;
-    border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
-    text-align: left;
+  margin: 30px auto;
+  border-radius: 8px;
+
+  text-align: left;
 }
 
-.productListHeader span:nth-child(2), .productListHeader span:nth-child(3){
-    text-align: center;
+/* .productListHeader span:nth-child(2),
+.productListHeader span:nth-child(3) {
+  text-align: center;
+} */
+
+/* .productListHeader .productListHeaderCategory {
+  text-align: right;
+} */
+
+.productListBody {
+  background-color: var(--white);
+  max-width: 909px;
+  margin: 0 auto;
+  padding: 0px 20px 0 20px;
+
+  border-radius: 8px;
 }
 
+/* .productListBody span:nth-child(2),
+.productListBody span:nth-child(3) {
+  text-align: center;
+} */
 
-.productListHeader .productListHeaderCategory{
-    text-align: right;
+.productItem {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: left;
+  padding: 15px 0;
+  align-items: center;
+
+  border-bottom: solid #ececec 1px;
+
+  position: relative;
 }
 
-.productListBody{
-    background-color: var(--white);
-    max-width: 909px;
-    margin: 0 auto;
-    padding: 0px 20px 0 20px;
+/* .productItem .productCategory {
+  text-align: right;
+} */
 
-    border-radius: 8px;
+.size-badge {
+  color: white;
+  background-color: #8c8c8c;
+  width: 5rem;
+  border-radius: 4px;
 
+  display: flex;
+  justify-content: center;
 }
 
-.productListBody span:nth-child(2), .productListBody span:nth-child(3){
-    text-align: center;
-}
+.x-icon {
+  position: absolute;
+  left: -6rem;
 
-.productItem{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: left;
-    padding: 15px 0;
-    align-items: center;
+  width: 2.5rem;
 
-    border-bottom: solid #ECECEC 1px;
-}
-
-.productItem .productCategory{
-    text-align: right;
+  background-color: rgba(255, 0, 0, 0.289);
+  border-radius: 50%;
+  padding: 0.4rem;
 }

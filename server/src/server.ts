@@ -33,6 +33,7 @@ app.post("/produto", async (request, response) => {
     data: {
       nome: body.nome,
       qtd: body.qtd,
+      tamanho: body.tamanho,
       categoriaId: body.categoriaId,
 
       // Verificar esse campo
