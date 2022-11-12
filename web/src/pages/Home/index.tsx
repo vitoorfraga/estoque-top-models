@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Dashboard from "../../components/Dashboard";
 import Product from "../../components/Product";
 import { Sidebar } from "../../components/Sidebar";
 
@@ -15,7 +16,7 @@ function Home() {
     <div className="main-grid">
       <Sidebar />
       <div className="main-content">
-        <h1 style={{ margin: "2rem" }}>Bem vindo!</h1>
+        <Dashboard />
       </div>
     </div>
   );
