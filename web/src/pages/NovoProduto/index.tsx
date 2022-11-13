@@ -11,7 +11,6 @@ function NovoProduto() {
       <div className="main-content new-product-container">
         <div className="new-product-title">
           <h1>Cadastrar produto</h1>
-          <p>Para cadastrar um novo produto, preencha todos os campos :)</p>
         </div>
 
         <NewProduct></NewProduct>
