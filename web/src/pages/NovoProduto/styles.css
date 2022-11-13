@@ -1,17 +1,9 @@
-.novo-produto-container {
-  display: grid;
-  background-color: red;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
-  margin: 2rem 0;
-}
-
 .new-product-title {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
-  max-width: 500px;
+  max-width: 800px;
   /* padding: 0 4rem; */
   width: 500px;
   margin-left: 4rem;
@@ -23,7 +15,7 @@
 }
 
 .new-product-title h1 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding: 0.6rem;
+  padding: 1.2rem 0;
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { FormEvent, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import { getConstantValue } from "typescript";
 import "./styles.css";
 
@@ -9,8 +10,6 @@ interface Categoria {
 }
 
 export function NewProduct() {
-  const [categorias, setCategorias] = useState<Categoria[]>([]);
-
   async function handleCreateProduct(event: FormEvent) {
     event.preventDefault();
     console.log("clicou no botão");
@@ -30,19 +29,20 @@ export function NewProduct() {
       });
 
       console.log("jasndjasndjas");
-      alert("Produto cadastrado no banco de dados.");
-      console.log(data.productName, data.amount, data.category);
+      Swal.fire({
+        icon: "success",
+        title: "Boaa",
+        text: "Seu produto foi cadastrado :)",
+      });
     } catch (err) {
-      alert("Erro ao cadastrar produto");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ocorreu um erro ao cadastrar o seu produto :(",
+        footer: '<a href="">Why do I have this issue?</a>',
+      });
     }
   }
-
-  useEffect(() => {
-    axios.get("http://localhost:3333/categorias").then((response) => {
-      setCategorias(response.data);
-      console.log(response.data);
-    });
-  }, []);
 
   return (
     <div>
@@ -86,18 +86,12 @@ export function NewProduct() {
 
         <div className="form-field">
           <label htmlFor="amount">Quantidade:</label>
-          <input required name="amount" type="number" placeholder="Ex: 5" />
+          <input required name="amount" type="number" />
         </div>
 
         <div className="form-field">
           <label htmlFor="size">Tamanho:</label>
-          <select
-            required
-            id="size"
-            name="size"
-            defaultValue=""
-            placeholder="Selecione o tamanho"
-          >
+          <select required id="size" name="size" defaultValue="">
             <option disabled value="">
               Selecione o tamanho
             </option>
