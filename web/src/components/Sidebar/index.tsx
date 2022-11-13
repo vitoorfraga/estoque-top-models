@@ -1,7 +1,7 @@
 import { Button } from "../Button";
 import { Link, NavLink } from "react-router-dom";
 
-import logo from "./../../assets/logos/top-models-v2.svg";
+import logo from "./../../assets/logos/top-models-v4.svg";
 import backgroundRoupas from "./../../assets/images/background-roupas.jpg";
 
 // Icones
@@ -15,34 +15,37 @@ import helpCircleIcon from "./../../assets/icons/help-circle.svg";
 import "./styles.css";
 
 export function Sidebar() {
+  const activeStyle = {
+    color: "red",
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        <img className="logo" src={backgroundRoupas} alt="" />
-        <p>Seja bem vindo ao seu sistema de gerenciamento de estoque!</p>
+        <img className="logo" src={logo} alt="" />
       </div>
 
       <div className="sidebar-nav-item">
-        <Link to="/" className="button">
+        <NavLink to="/" end className="button">
           <img src={homeIcon} alt="" />
           Inicio
-        </Link>
-        <Link to="/estoque" className="button">
+        </NavLink>
+        <NavLink to="/estoque" end className="button">
           <img src={estoqueIcon} alt="" />
           Estoque
-        </Link>
-        <Link to="/novo-produto" className="button">
+        </NavLink>
+        <NavLink to="/novo-produto" end className="button">
           <img src={plusCircleIcon} alt="" />
           Novo Produto
-        </Link>
-        <Link to="/editar-produto" className="button">
+        </NavLink>
+        <NavLink to="/editar-produto" end className="button">
           <img src={editIcon} alt="" />
           Editar Produto
-        </Link>
-        <Link to="/contato" className="button">
+        </NavLink>
+        <NavLink to="/contato" end className="button">
           <img src={helpCircleIcon} alt="" />
           Contato
-        </Link>
+        </NavLink>
       </div>
 
       {/* <div className="sidebar-nav-item">

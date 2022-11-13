@@ -26,7 +26,7 @@ export function NewProduct() {
         nome: data.productName,
         qtd: Number(data.amount),
         tamanho: data.size,
-        categoriaId: Number(data.category),
+        categoriaName: data.category,
       });
 
       console.log("jasndjasndjas");
@@ -50,37 +50,36 @@ export function NewProduct() {
         <div className="form-row">
           <div className="form-field">
             <label htmlFor="productName">Nome do produto:</label>
-            <input
-              required
-              name="productName"
-              id="productName"
-              type="text"
-              placeholder="Ex: Camiseta Regata"
-            />
+            <input required name="productName" id="productName" type="text" />
           </div>
           <div className="form-field">
             <label htmlFor="category">Categoria:</label>
-            <select
-              required
-              id="category"
-              name="category"
-              defaultValue=""
-              placeholder="Selecione a categoria"
-            >
+            <select required id="category" name="category" defaultValue="">
               <option disabled value="">
                 Selecione a categoria
               </option>
 
-              {categorias.map((categoria) => {
-                return (
-                  <option
-                    key={categoria.categoriaId}
-                    value={categoria.categoriaId}
-                  >
-                    {categoria.nome}
-                  </option>
-                );
-              })}
+              <option value="Camisetas">Camisetas</option>
+              <option value="Blusinhas">Blusinhas</option>
+              <option value="Camisas">Camisas</option>
+              <option value="Sueteres e cardigans">Suéteres e Cardigans</option>
+              <option value="Blazers, jaquetas e casacos">
+                Blazers, jaquetas e casacos
+              </option>
+              <option value="Coletes e quimonos">Coletes e quimonos</option>
+              <option value="Regatas">Regatas</option>
+              <option value="Shorts e bermudas">Shorts e bermudas</option>
+              <option value="Calças">Calças</option>
+              <option value="Vestidos">Vestidos</option>
+              <option value="Saias">Saias</option>
+              <option value="Meias-calças">Meias-calças</option>
+              <option value="Cachecóis e pashminas">
+                Cachecóis e pashminas
+              </option>
+              <option value="Lenços">Lenços</option>
+              <option value="Bolsas">Sapatos</option>
+              <option value="Meias">Meias</option>
+              <option value="Outros">Outros</option>
             </select>
           </div>
         </div>
