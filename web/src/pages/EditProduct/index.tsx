@@ -15,13 +15,12 @@ interface Produto {
 function EditProduct() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
+  async function getProdutos() {
+    axios("http://localhost:3333/estoque").then((response) => {
+      setProdutos(response.data);
+    });
+  }
   useEffect(() => {
-    async function getProdutos() {
-      axios("http://localhost:3333/estoque").then((response) => {
-        setProdutos(response.data);
-      });
-    }
-
     getProdutos();
   }, []);
 
@@ -67,13 +66,11 @@ function EditProduct() {
                           "success",
                         );
 
-                        axios
-                          .delete(
-                            `http://localhost:3333/produto/${produto.produtoId}`,
-                          )
-                          .then((response) => {
-                            setProdutos(response.data);
-                          });
+                        axios.delete(
+                          `http://localhost:3333/produto/${produto.produtoId}`,
+                        );
+
+                        getProdutos();
                       }
                     })
                   // axios.delete(
