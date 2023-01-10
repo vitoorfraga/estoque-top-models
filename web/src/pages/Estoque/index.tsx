@@ -1,7 +1,9 @@
 import axios from "axios";
+import { FirebaseError } from "firebase/app";
 import { useState, useEffect } from "react";
 import Product from "../../components/Product";
 import { Sidebar } from "../../components/Sidebar";
+// import { getLoggedUser, viewUser } from "../../settings/Auth";
 
 interface Produto {
   produtoId: string;
@@ -30,6 +32,14 @@ function Estoque() {
           <span>Tamanho</span>
           <span>Quantidade</span>
           <span className="productListHeaderCategory">Categoria</span>
+
+          <button
+          onClick={() => {
+            console.log('clicou')
+            
+            // console.log(getLoggedUser())
+          }}
+          >Ver usuario</button>
         </div>
 
         <div className="productListBody">

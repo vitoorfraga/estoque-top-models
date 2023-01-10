@@ -69,7 +69,7 @@ function EditProduct() {
                         axios.delete(
                           `http://localhost:3333/produto/${produto.produtoId}`,
                         );
-
+                        window.location.reload();
                         getProdutos();
                       }
                     })

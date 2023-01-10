@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { setConstantValue } from "typescript";
 
 import background from "./../../assets/images/login-background.jpg";
 import "./styles.css";
 
+import ActivityResponse, {showActivityIndicator, hideActivityIndicator} from "../../components/ActivityResponse";
+import { AuthProvider, meuTeste } from "../../settings/Auth";
+
+
 const Login = () => {
   const [isActiveMail, setIsActiveMail] = React.useState(false);
   const [isActivePassword, setIsActivePassword] = React.useState(false);
+
+  const [login, setLogin] = React.useState(null)
+  const [password, setPassword] = React.useState(null)
+
+  const [isLoadingLoggedUser, setisLoadingLoggedUser] = useState(false)
+  
 
   function handleMailChange(text: any) {
     const setValue = text;
@@ -19,7 +28,7 @@ const Login = () => {
     }
   }
 
-  function handlePasswordChange(text2: any) {
+   function handlePasswordChange(text2: any) {
     const setValue = text2;
 
     if (text2 !== "") {
@@ -28,31 +37,27 @@ const Login = () => {
       setIsActivePassword(false);
     }
   }
+  
 
-  function handleSubmit(event: any) {
+   async function handleSubmit(event: any) {
     event.preventDefault();
-    console.log("jasidjasi");
-    console.log(event);
+    showActivityIndicator()
 
     // const login = event.target;
-    const login: any = document.querySelector("#login-mail");
-    const password: any = document.querySelector("#login-password");
+    const login: any = document.getElementById("login-mail");
+    const password: any = document.getElementById("login-password");
 
-    if (login.value === "dev@btk.com.br") {
-      if (password.value === "1234") {
-        window.location.href = "/";
-      }
-    } else {
-      Swal.fire({
-        title: "Ops!",
-        text: "E-mail ou senha incorretos!",
-        icon: "error",
-        confirmButtonText: "Tente Novamente",
-      });
-    }
+    const user = await meuTeste(login.value, password.value)
+    console.log(user)
+    // await loginWithEmailAndPassword(login.value, password.value)
+    // const user = loginWithEmailAndPassword(login.value, password.value)
   }
 
   return (
+  <>
+    <ActivityResponse />
+
+
     <div className="login-grid">
       <div className="login">
         <div className="login-intro">
@@ -73,14 +78,14 @@ const Login = () => {
               name="login-mail"
               id="login-mail"
               placeholder=""
-            />
+              />
           </div>
 
           <div className="form-field">
             <label
               className={isActivePassword ? "Active" : ""}
               htmlFor="password"
-            >
+              >
               Senha
             </label>
             <input
@@ -90,19 +95,33 @@ const Login = () => {
               name=""
               id="login-password"
               placeholder=""
-            />
+              />
           </div>
 
           <div className="form-button">
-            <button type="submit">Entrar</button>
+            <button 
+            onClick={handleSubmit}
+            type="submit">Entrar</button>
           </div>
         </form>
+      <button 
+        onClick={() => {
+          // const user = getLoggedUser()   
+          // console.log(user)       
+        }}
+        style={{marginTop: 30}}>
+        Ver usuario
+      </button>
       </div>
+
 
       <div className="background">
         <img src={background} alt="" />
       </div>
     </div>
+
+    {/* {isLoadingLoggedUser ? showActivityIndicator() : hideActivityIndicator()} */}
+  </>
   );
 };
 

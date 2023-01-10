@@ -11,6 +11,9 @@ import plusCircleIcon from "./../../assets/icons/plus-circle.svg";
 import homeIcon from "./../../assets/icons/home.svg";
 import estoqueIcon from "./../../assets/icons/folder.svg";
 import helpCircleIcon from "./../../assets/icons/help-circle.svg";
+import logOutIcon from "./../../assets/icons/log-out.svg";
+
+// import { handleLogOut } from "../../settings/Auth";
 
 import "./styles.css";
 
@@ -47,7 +50,14 @@ export function Sidebar() {
           Contato
         </NavLink>
       </div>
-
+      <button 
+      onClick={() => {
+        // handleLogOut()
+      }}
+      className="button">
+          <img src={logOutIcon} alt="" />
+          Sair
+        </button>
       {/* <div className="sidebar-nav-item">
         <span>APP</span>
 
